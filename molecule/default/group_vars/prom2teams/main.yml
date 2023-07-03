@@ -23,10 +23,9 @@ prom2teams_webhook_urls:
 prom2teams_socket: http
 prom2teams_host: "{{ ansible_eth0.ipv4.address }}"
 # Use this one for testing purposes
-#prom2teams_host: "{{ ansible_eth1.ipv4.address }}"
 prom2teams_port: 8001
 
 prom2teams_groupalertsby: name
 
 prom2teams_teams_client_config:
-  - { key: RequestTimeout, value: 30 }
+  - {key: RequestTimeout, value: 30}

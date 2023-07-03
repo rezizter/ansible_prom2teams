@@ -58,7 +58,7 @@ prom2teams_environment: pro # (pre|pro|)
 
 ## Logrotate
 prom2teams_logrotate_enabled: true
-prom2teams_logrotate_template_path: templates/logrotate.j2 # This picks the one in the role
+prom2teams_logrotate_template_path: templates/logrotate.j2
 
 ## Webhooks
 prom2teams_webhook_urls:
