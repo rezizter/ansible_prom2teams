@@ -89,7 +89,7 @@ See `molecule.yml` to check possible testing platforms.
 
 ## Built With
 
-![Ansible](https://img.shields.io/badge/ansible-7.0.0-green.svg)
+![Ansible](https://img.shields.io/badge/ansible-2.14.2-green.svg)
 
 ## Versioning
 
