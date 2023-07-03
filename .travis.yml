@@ -16,7 +16,6 @@ install:
 before_script:
   # Use actual Ansible Galaxy role name for the project directory.
   - cd ../
-  - mv ansible-role-$ROLE_NAME rezizter.$ROLE_NAME
   - cd rezizter.$ROLE_NAME
 
 script:
