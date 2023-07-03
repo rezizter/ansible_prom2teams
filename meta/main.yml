@@ -2,10 +2,9 @@
 dependencies: []
 
 galaxy_info:
-  role_name: java
-  author: geerlingguy
-  description: Java for Linux
-  company: "Midwestern Mac, LLC"
+  role_name: nsible_prom2teams
+  author: rezizter
+  description: prom2teams role for CentOS 7
   license: "license (BSD, MIT)"
   min_ansible_version: 2.4
   platforms:
