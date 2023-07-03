@@ -1,8 +1,7 @@
----
 name: CI
 on: [push]
-  schedule:
-    - cron: "30 5 * * 0"
+#  schedule:
+#    - cron: "30 5 * * 0"
 
 defaults:
   run:
