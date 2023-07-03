@@ -1,14 +1,19 @@
 ---
-galaxy_info:
-  author: your name
-  description: your role description
-  company: your company (optional)
-
-
-  license: license (BSD-3-Clause)
-
-  min_ansible_version: 2.1
-
-  galaxy_tags: []
-
 dependencies: []
+
+galaxy_info:
+  role_name: java
+  author: geerlingguy
+  description: Java for Linux
+  company: "Midwestern Mac, LLC"
+  license: "license (BSD, MIT)"
+  min_ansible_version: 2.4
+  platforms:
+    - name: EL
+      versions:
+        - 6
+        - 7
+        - 8
+  galaxy_tags:
+    - development
+    - prom2teams
