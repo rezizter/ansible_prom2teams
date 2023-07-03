@@ -1,0 +1,34 @@
+---
+- name: prom2teams | Ensure prom2teams group
+  group:
+    name: "{{ prom2teams_group }}"
+
+- name: prom2teams | Ensure prom2teams user
+  user:
+    name: "{{ prom2teams_user }}"
+    group: "{{ prom2teams_group }}"
+    shell: /bin/bash
+
+- name: prom2teams | Installing dependencies
+  ansible.builtin.yum:
+    name: "{{ prom2teams_required_libs }}"
+
+- name: prom2teams | Installing required pip packages
+  pip:
+    name: "{{ prom2teams_required_pip_packages }}"
+    executable: pip3
+  notify: restart prom2teams
+
+- name: prom2teams | Installing prom2teams
+  pip:
+    name: prom2teams
+    version: "{{ prom2teams_version }}"
+    executable: pip3
+  notify: restart prom2teams
+
+- name: prom2teams | Copy Daemon script
+  template:
+    src: "{{ prom2teams_service_template_path }}"
+    dest: /etc/systemd/system/prom2teams.service
+    mode: 0644
+  notify: restart prom2teams

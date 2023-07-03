@@ -1,0 +1,20 @@
+---
+# tasks file for prom2teams
+# Install packages needed to run pip.
+- name: prom2teams | Install
+  import_tasks: install.yml
+  tags:
+    - prom2teams_install
+    - install
+
+- name: prom2teams | Config
+  import_tasks: config.yml
+  tags:
+    - prom2teams_config
+    - config
+
+- name: prom2teams | Service
+  import_tasks: service.yml
+  tags:
+    - prom2teams_service
+    - service

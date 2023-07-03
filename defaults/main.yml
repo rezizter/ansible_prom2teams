@@ -1,0 +1,73 @@
+---
+## General
+prom2teams_version: 3.3.0
+prom2teams_required_libs:
+  - python36
+  - python36-devel
+  - python36-pip
+prom2teams_required_pip_packages:
+  - uwsgi
+  - flake8==3.9.2
+  - zipp==1.2.0
+  - jsonschema==3.2.0
+
+# Owner
+prom2teams_user: prom2teams
+prom2teams_group: prom2teams
+
+## Service options
+prom2teams_service_state: started
+prom2teams_service_enabled: True
+
+## Prom2teams Files & Paths
+prom2teams_config_folder: /etc/prom2teams
+prom2teams_config_service_file: "{{ prom2teams_config_folder }}/uwsgi.ini"
+prom2teams_config_file: "{{ prom2teams_config_folder }}/prom2teams.ini"
+prom2teams_config_environment_file: "{{ prom2teams_config_folder }}/prom2teams"
+
+prom2teams_logs_folder: /var/log/prom2teams
+prom2teams_logs_level: INFO
+prom2teams_logs_absolute_path: "{{ prom2teams_logs_folder }}/prom2teams.log"
+
+prom2teams_pid_file: /var/run/prom2teams/prom2teams.pid
+
+## Files & Templates paths
+prom2teams_wsgi_app_file_path: "wsgi.py"
+prom2teams_ini_template_path: "prom2teams.ini.j2"
+prom2teams_config_uwsgi_template_path: "uwsgi.ini.j2"
+prom2teams_config_environment_template_path: "prom2teams.j2"
+prom2teams_service_template_path: "prom2teams.service.j2"
+# There is another one in the Logrotate section
+
+## prom2teams configuration
+prom2teams_socket: file # file | http
+prom2teams_host: localhost
+prom2teams_port: 8089
+prom2teams_name: "{{ ansible_hostname }}"
+prom2teams_prometheus_metrics: False # True, False
+#prom2teams_template_path: # Define if needed
+#prom2teams_groupalertsby: # Define if used
+
+## UWSGI
+prom2teams_uwsgi_processes: 5
+prom2teams_uwsgi_threads: 2
+prom2teams_uwsgi_runnable_path: "{{ prom2teams_config_folder }}"
+
+## Environment
+prom2teams_environment: pro # (pre|pro|)
+
+## Logrotate
+prom2teams_logrotate_enabled: true
+prom2teams_logrotate_template_path: templates/logrotate.j2 # This picks the one in the role
+
+## Webhooks
+prom2teams_webhook_urls:
+#  connector1: http://test
+#  connector2: http://test2
+
+## Teams Client config
+#prom2teams_teams_client_config:
+#  - { key: RequestTimeout, value: 30 }
+#  - { key: RetryEnable, value: false }
+#  - { key: RetryWaitTime, value: 60 }
+#  - { key: MaxPayload, value: 24 }
