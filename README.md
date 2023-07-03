@@ -18,7 +18,7 @@ This Ansible role installs prom2teams in a CentOS 7 environment.
 
 ## Credit
 
-This is based on a similar role for Debian by *idealista* on this project: (https://github.com/idealista/prom2teams_role)
+This is based on a similar role for Debian by *idealista* on this project: https://github.com/idealista/prom2teams_role
 I modified this role for CentOS 7.
 
 ## Getting Started
