@@ -4,4 +4,4 @@
   tasks:
     - name: "Include rezizter.ansible_prom2teams"
       include_role:
-        name: "ansible_prom2teams"
+        name: "rezizter.ansible_prom2teams"
