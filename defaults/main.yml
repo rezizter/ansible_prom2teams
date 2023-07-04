@@ -2,11 +2,16 @@
 ## General
 prom2teams_version: 3.3.0
 prom2teams_required_libs:
+  - ca-certificates
+  - gcc
+  - sudo
+  - systemd
+  - python-setuptools
   - python36
   - python36-devel
   - python36-pip
 prom2teams_required_pip_packages:
-  - uwsgi
+  - uwsgi==2.0.20
   - flake8==3.9.2
   - zipp==1.2.0
   - jsonschema==3.2.0

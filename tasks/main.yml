@@ -1,6 +1,21 @@
 ---
 # tasks file for prom2teams
-# Install packages needed to run pip.
+# Allow pip to download from internet
+- name: prom2teams | Create pip directory
+  ansible.builtin.file:
+    path: ~/.pip/
+    state: directory
+    mode: '0755'
+
+- name: prom2teams | Copy pip config
+  ansible.builtin.copy:
+    src: pip.conf
+    dest: ~/.pip/pip.conf
+    owner: root
+    group: root
+    mode: '0755'
+
+# Install packages needed to run pip
 - name: prom2teams | Install
   import_tasks: install.yml
   tags:

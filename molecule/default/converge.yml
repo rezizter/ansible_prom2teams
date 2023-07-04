@@ -1,6 +1,10 @@
 ---
 - name: Converge
   hosts: all
+  vars:
+    prometheus_msteams_version: 1.5.2
+    prom2teams_webhook_urls:
+      Connector: https://test.com
   tasks:
     - name: "Include rezizter.ansible_prom2teams"
       include_role:
