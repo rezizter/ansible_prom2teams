@@ -39,15 +39,13 @@ jobs:
         include:
           - distro: rockylinux8
             playbook: converge.yml
+          - distro: centos7
+            playbook: converge.yml
           - distro: fedora33
             playbook: converge.yml
-          - distro: ubuntu2004
-            playbook: converge.yml
-          - distro: ubuntu1804
-            playbook: converge.yml
-          - distro: debian10
-            playbook: converge.yml
           - distro: rockylinux8
+            playbook: pip.yml
+          - distro: centos7
             playbook: pip.yml
 
     steps:

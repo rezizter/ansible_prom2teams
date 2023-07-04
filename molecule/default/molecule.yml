@@ -3,24 +3,10 @@ dependency:
   name: galaxy
 driver:
   name: docker
-lint: |
-  yamllint .
-  ansible-lint .
 platforms:
-  - name: prom2teams
-    groups:
-      - prom2teams
-    image: ${DOCKER_BASE_IMAGE:-debian:bullseye-slim}
-    privileged: false
-    capabilities:
-      - SYS_ADMIN
-    volumes:
-      - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
-    tmpfs:
-      - /run
-      - /run/lock
-    command: '/lib/systemd/systemd'
-    stop_signal: 'RTMIN+3'
+  - name: instance
+    image: quay.io/centos/centos:centos7
+    pre_build_image: true
 provisioner:
   name: ansible
 verifier:

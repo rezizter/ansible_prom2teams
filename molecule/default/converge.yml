@@ -1,5 +1,7 @@
 ---
 - name: Converge
   hosts: all
-  roles:
-    - role: rezizter.ansible_prom2teams
+  tasks:
+    - name: "Include ansible_prom2teams"
+      include_role:
+        name: "ansible_prom2teams"
