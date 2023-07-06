@@ -1,0 +1,38 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
+platforms:
+# EL 8 Tests
+  - name: el8-instance
+    image: quay.io/centos/centos:stream8
+    command: /usr/sbin/init
+#    tmpfs:
+#      - /run
+#      - /tmp
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    cgroupns_mode: host
+    privileged: true
+    pre_build_image: true
+# EL 7 Tests
+  - name: el7-instance
+    image: "chzerv/${IMAGE:-centos7}-systemd-ansible:latest"
+#    command: /sbin/init
+    tmpfs:
+      - /run
+      - /tmp
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    cgroupns_mode: host
+    privileged: true
+    pre_build_image: true
+provisioner:
+  name: ansible
+verifier:
+  name: ansible

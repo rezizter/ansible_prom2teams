@@ -4,9 +4,8 @@
   become: true
 
   vars:
-    prometheus_msteams_version: 1.5.2
-    prom2teams_webhook_urls:
-      Connector: https://test.com
+    certbot_install_method: 'snap'
+    certbot_auto_renew_user: root
 
   pre_tasks:
     - name: Update apt cache.
@@ -14,12 +13,8 @@
       when: ansible_os_family == 'Debian'
       changed_when: false
 
-    - name: Install dependencies (RedHat).
-      yum:
-        name:
-          - cronie
-          - epel-release
-        state: present
+    - name: Install cron (RedHat).
+      yum: name=cronie state=present
       when: ansible_os_family == 'RedHat'
 
     - name: Install cron (Debian).
@@ -27,5 +22,5 @@
       when: ansible_os_family == 'Debian'
 
   roles:
-    #- rezizter.ansible_prom2teams
-    - ansible_prom2teams
+    - geerlingguy.git
+    - geerlingguy.certbot
