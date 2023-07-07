@@ -47,12 +47,6 @@ jobs:
           - distro: centos7
             playbook: converge.yml
             experimental: false
-          - distro: ubuntu1804
-            playbook: converge.yml
-            experimental: false
-          - distro: debian10
-            playbook: converge.yml
-            experimental: false
 
     steps:
       - name: Check out the codebase.

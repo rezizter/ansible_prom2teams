@@ -17,6 +17,7 @@
     - name: Install dependencies (RedHat).
       yum:
         name:
+          - sudo
           - cronie
           - epel-release
         state: present
@@ -27,5 +28,4 @@
       when: ansible_os_family == 'Debian'
 
   roles:
-    #- rezizter.ansible_prom2teams
     - ansible_prom2teams
