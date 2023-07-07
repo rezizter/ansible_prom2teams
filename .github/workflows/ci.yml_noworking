@@ -1,8 +1,12 @@
 ---
 name: CI
-on: [push]
-#  schedule:
-#    - cron: "30 5 * * 0"
+'on':
+  pull_request:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "30 2 * * 0"
 
 defaults:
   run:
@@ -17,7 +21,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v2
         with:
-          path: 'rezizter.ansible_prom2teams'
+          path: 'geerlingguy.certbot'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v2
@@ -39,6 +43,10 @@ jobs:
         include:
           - distro: centos8
             playbook: converge.yml
+            experimental: false
+          - distro: centos7
+            playbook: converge.yml
+            experimental: false
 
     steps:
       - name: Check out the codebase.
@@ -56,6 +64,7 @@ jobs:
 
       - name: Run Molecule tests.
         run: molecule test
+        continue-on-error: ${{ matrix.experimental }}
         env:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
