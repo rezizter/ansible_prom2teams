@@ -28,4 +28,4 @@
       when: ansible_os_family == 'Debian'
 
   roles:
-    - ansible_prom2teams
+    - rezizter.ansible_prom2teams
