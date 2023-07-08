@@ -8,8 +8,8 @@ platforms:
   - name: el8_instance
     image: rezizter/centos8-sudo
     command: /usr/sbin/init
-#    volumes:
-#      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
     #tmpfs:
     #  - /run
     #  - /tmp
