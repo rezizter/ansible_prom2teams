@@ -1,0 +1,31 @@
+---
+- name: Converge
+  hosts: all
+  become: true
+
+  vars:
+    prometheus_msteams_version: 1.5.2
+    prom2teams_webhook_urls:
+      Connector: https://test.com
+
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=yes cache_valid_time=600
+      when: ansible_os_family == 'Debian'
+      changed_when: false
+
+    - name: Install dependencies (RedHat).
+      yum:
+        name:
+          - sudo
+          - cronie
+          - epel-release
+        state: present
+      when: ansible_os_family == 'RedHat'
+
+    - name: Install cron (Debian).
+      apt: name=cron state=present
+      when: ansible_os_family == 'Debian'
+
+  roles:
+    - rezizter.ansible_prom2teams
