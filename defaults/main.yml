@@ -4,6 +4,7 @@ prom2teams_version: 3.3.0
 prom2teams_required_libs_el7:
   - ca-certificates
   - gcc
+  - which
   - sudo
   - systemd
   - python-setuptools
