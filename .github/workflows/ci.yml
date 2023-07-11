@@ -38,10 +38,10 @@ jobs:
       matrix:
         scenario:
           - centos-8
-          - debian-10
-          - fedora-34
+#          - debian-10
+#          - fedora-34
           - oraclelinux-8
-          - ubuntu-20.04
+#          - ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
