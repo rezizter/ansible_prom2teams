@@ -5,7 +5,8 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: instance
+  #- name: instance
+  - name: centos-8
     image: rezizter/centos8-sudo
     command: /usr/sbin/init
     #command: ${MOLECULE_DOCKER_COMMAND:-""}
