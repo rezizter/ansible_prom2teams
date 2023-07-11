@@ -1,5 +1,5 @@
 
-[![Build Status](https://travis-ci.org/rezizter/ansible_prom2teams.png)](https://app.travis-ci.com/github/rezizter/ansible_prom2teams)
+[![Build Status](https://github.com/rezizter/ansible_prom2teams/actions/workflows/ci.yml/badge.svg)](https://github.com/rezizter/ansible_prom2teams/actions/workflows/ci.yml)
 
 # prom2teams Ansible role for EL7
 
