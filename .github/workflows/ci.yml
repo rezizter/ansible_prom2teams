@@ -6,7 +6,7 @@ on: [push]
 
 defaults:
   run:
-    working-directory: 'rezizter.ansible_prom2teams'
+    working-directory: 'rezizter.ansible-prom2teams'
 
 jobs:
 
@@ -17,7 +17,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v2
         with:
-          path: 'rezizter.ansible_prom2teams'
+          path: 'rezizter.ansible-prom2teams'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v2
@@ -44,7 +44,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v2
         with:
-          path: 'rezizter.ansible_prom2teams'
+          path: 'rezizter.ansible-prom2teams'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v2
