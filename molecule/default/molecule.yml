@@ -4,9 +4,11 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: instance
+  - name: centos-8
     image: quay.io/centos/centos:stream8
     pre_build_image: true
+    command: /usr/sbin/init
+    privileged: true
 provisioner:
   name: ansible
 verifier:

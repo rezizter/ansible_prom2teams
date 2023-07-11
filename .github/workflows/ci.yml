@@ -32,26 +32,32 @@ jobs:
           yamllint .
 
   molecule:
+    name: Molecule
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
       matrix:
-        scenario:
-          - centos-8
-#          - debian-10
-#          - fedora-34
-#          - oraclelinux-8
-#          - ubuntu-20.04
+        include:
+          - distro: centos-8
+            playbook: converge.yml
+
     steps:
-      - name: Checkout
+      - name: Check out the codebase.
         uses: actions/checkout@v2
         with:
-          path: "${{ github.repository }}"
-      - name: Molecule
-        uses: gofrolist/molecule-action@v2
+          path: 'rezizter.ansible_prom2teams'
+
+      - name: Set up Python 3.
+        uses: actions/setup-python@v2
         with:
-          molecule_options: --debug --base-config molecule/_shared/base.yml
-          molecule_command: test
-          molecule_args: --scenario-name ${{ matrix.scenario }}
+          python-version: '3.10'
+
+      - name: Install test dependencies.
+        run: pip3 install ansible molecule molecule-plugins[docker] docker
+
+      - name: Run Molecule tests.
+        run: molecule test
         env:
+          PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
+          MOLECULE_DISTRO: ${{ matrix.distro }}
+          MOLECULE_PLAYBOOK: ${{ matrix.playbook }}
