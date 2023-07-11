@@ -14,6 +14,7 @@ prom2teams_required_libs_el7:
 prom2teams_required_libs_el8:
   - ca-certificates
   - gcc
+  - which
   - sudo
   - systemd
   - platform-python-setuptools
