@@ -2,9 +2,9 @@
 dependencies: []
 
 galaxy_info:
-  role_name: ansible_prom2teams
+  role_name: ansible-prom2teams
   author: rezizter
-  description: prom2teams role for CentOS 7
+  description: prom2teams role for CentOS 7 and CentOS 8
   license: "license (BSD, MIT)"
   min_ansible_version: 2.4
   platforms:
