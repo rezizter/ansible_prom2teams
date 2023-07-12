@@ -7,6 +7,6 @@
       Connector: https://test.com
 
   tasks:
-    - name: "Include rezizter.ansible-prom2teams"
+    - name: "Include rezizter.ansible_prom2teams"
       include_role:
-        name: "rezizter.ansible-prom2teams"
+        name: "rezizter.ansible_prom2teams"

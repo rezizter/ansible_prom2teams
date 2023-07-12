@@ -1,5 +1,5 @@
 
-[![Build Status](https://github.com/rezizter/ansible-prom2teams/actions/workflows/ci.yml/badge.svg)](https://github.com/rezizter/ansible-prom2teams/actions/workflows/ci.yml)
+[![Build Status](https://github.com/rezizter/ansible_prom2teams/actions/workflows/ci.yml/badge.svg)](https://github.com/rezizter/ansible_prom2teams/actions/workflows/ci.yml)
 
 # prom2teams Ansible role for EL7
 
@@ -36,18 +36,18 @@ For testing purposes, [Molecule](https://molecule.readthedocs.io/) with [Docker]
 Create or add to your roles dependency file (e.g requirements.yml) from GitHub:
 
 ```
-- src: https://github.com/rezizter/ansible-prom2teams.git
+- src: https://github.com/rezizter/ansible_prom2teams.git
   scm: git
   version: 1.0.6
-  name: rezizter.ansible-prom2teams
+  name: rezizter.ansible_prom2teams
 ```
 
-or using [Ansible Galaxy](https://galaxy.ansible.com/rezizter/ansible-prom2teams/) as origin if you prefer:
+or using [Ansible Galaxy](https://galaxy.ansible.com/rezizter/ansible_prom2teams/) as origin if you prefer:
 
 ```
-- src: rezizter.ansible-prom2teams
+- src: rezizter.ansible_prom2teams
   version: master
-  name: rezizter.ansible-prom2teams
+  name: rezizter.ansible_prom2teams
 ```
 
 Install the role with ansible-galaxy command:
@@ -62,7 +62,7 @@ Use in a playbook:
 ---
 - hosts: someserver
   roles:
-    - rezizter.ansible-prom2teams
+    - rezizter.ansible_prom2teams
 ```
 
 ## Usage
@@ -93,7 +93,7 @@ See `molecule.yml` to check possible testing platforms.
 
 ## Versioning
 
-For the versions available, see the [tags on this repository](https://github.com/rezizter/ansible-prom2teams/tags).
+For the versions available, see the [tags on this repository](https://github.com/rezizter/ansible_prom2teams/tags).
 
 Additionaly you can see what change in each version in the [CHANGELOG.md](CHANGELOG.md) file.
 
