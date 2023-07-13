@@ -38,7 +38,7 @@ Create or add to your roles dependency file (e.g requirements.yml) from GitHub:
 ```
 - src: https://github.com/rezizter/ansible_prom2teams.git
   scm: git
-  version: 1.0.9
+  version: 1.0.10
   name: rezizter.ansible_prom2teams
 ```
 
