@@ -13,3 +13,5 @@ provisioner:
   name: ansible
 verifier:
   name: ansible
+collections:
+  - community.general
