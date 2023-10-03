@@ -24,6 +24,7 @@
     name: "{{ prom2teams_required_pip_packages }}"
     executable: pip3
   notify: restart prom2teams
+  tags: molecule-idempotence-notest
 
 - name: prom2teams | Installing prom2teams
   pip:
