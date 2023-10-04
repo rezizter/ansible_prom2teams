@@ -8,5 +8,5 @@
 
   tasks:
     - name: "Include rezizter.ansible_prom2teams"
-      include_role:
+      ansible.builtin.include_role:
         name: "rezizter.ansible_prom2teams"
