@@ -2,6 +2,6 @@
 # handlers file for prom2teams_role
 
 - name: restart prom2teams
-  systemd:
+  ansible.builtin.systemd:
     name: prom2teams
     state: restarted
