@@ -1,6 +1,7 @@
 ---
 - name: Converge
   hosts: all
+  gather_facts: true
   vars:
     prometheus_msteams_version: 1.5.2
     prom2teams_webhook_urls:
