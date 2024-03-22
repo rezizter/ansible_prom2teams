@@ -1,9 +1,9 @@
 
 [![Build Status](https://github.com/rezizter/ansible_prom2teams/actions/workflows/ci.yml/badge.svg)](https://github.com/rezizter/ansible_prom2teams/actions/workflows/ci.yml)
 
-# prom2teams Ansible role for EL7
+# prom2teams Ansible role for EL8
 
-This Ansible role installs prom2teams in a CentOS 7 environment.
+This Ansible role installs prom2teams in a CentOS 8 environment.
 
 - [Getting Started](#getting-started)
 	- [Prerequisities](#prerequisities)
@@ -19,11 +19,11 @@ This Ansible role installs prom2teams in a CentOS 7 environment.
 ## Credit
 
 This is based on a similar role for Debian by *idealista* on this project: https://github.com/idealista/prom2teams_role
-I modified this role for CentOS 7.
+I modified this role for CentOS 8.
 
 ## Getting Started
 
-These instructions will get you a copy of the role for your ansible playbook. Once launched, it will install a [prom2teams](https://github.com/idealista/prom2teams) server on a CentOS 7 server.
+These instructions will get you a copy of the role for your ansible playbook. Once launched, it will install a [prom2teams](https://github.com/idealista/prom2teams) server on a CentOS 8 server.
 
 ### Prerequisities
 
