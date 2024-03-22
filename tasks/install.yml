@@ -11,13 +11,7 @@
 
 - name: prom2teams | Installing dependencies
   ansible.builtin.yum:
-    name: "{{ prom2teams_required_libs_el7 }}"
-  when: (ansible_facts['distribution'] == "RedHat" and ansible_facts['distribution_major_version'] == "7")
-
-- name: prom2teams | Installing dependencies
-  ansible.builtin.yum:
-    name: "{{ prom2teams_required_libs_el8 }}"
-  when: (ansible_facts['distribution'] == "AlmaLinux" and ansible_facts['distribution_major_version'] == "8")
+    name: "{{ prom2teams_required_libs }}"
 
 - name: prom2teams | Installing required pip packages
   ansible.builtin.pip:
