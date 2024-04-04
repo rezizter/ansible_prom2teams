@@ -17,18 +17,15 @@
   ansible.builtin.pip:
     name: "{{ prom2teams_required_pip_packages }}"
     executable: pip3
-  notify: restart prom2teams
 
 - name: prom2teams | Installing prom2teams
   ansible.builtin.pip:
     name: prom2teams
     version: "{{ prom2teams_version }}"
     executable: pip3
-  notify: restart prom2teams
 
 - name: prom2teams | Copy Daemon script
   ansible.builtin.template:
     src: "{{ prom2teams_service_template_path }}"
     dest: /etc/systemd/system/prom2teams.service
     mode: 0644
-  notify: restart prom2teams
