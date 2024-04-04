@@ -1,18 +1,4 @@
 ---
-#dependency:
-#  name: galaxy
-#driver:
-#  name: docker
-#platforms:
-#  - name: almalinux-8
-#    image: almalinux:8
-#    pre_build_image: true
-#    command: /usr/sbin/init
-#    privileged: true
-#provisioner:
-#  name: ansible
-#verifier:
-#  name: ansible
 dependency:
   name: galaxy
 driver:
