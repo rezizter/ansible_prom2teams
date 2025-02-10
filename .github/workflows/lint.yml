@@ -5,7 +5,7 @@ name: Checkout
     branches:
       - dev
   schedule:
-    - cron: "06 16 * * 1"
+    - cron: "08 16 * * 1"
 defaults:
   run:
     working-directory: 'rezizter.ansible_prom2teams'
