@@ -3,12 +3,9 @@ name: Checkout
 'on':
   push:
     branches:
-      - dev
+      - master
   schedule:
-    - cron: "08 16 * * 1"
-defaults:
-  run:
-    working-directory: 'rezizter.ansible_prom2teams'
+    - cron: "13 16 * * 1"
 jobs:
   run-linters:
     name: Run linters
