@@ -1,21 +1,19 @@
 ---
-name: CI
-#on: [push]
+name: Checkout
 'on':
   push:
     branches:
       - dev
   schedule:
-    - cron: "51 15 * * 1"
+    - cron: "06 16 * * 1"
 defaults:
   run:
     working-directory: 'rezizter.ansible_prom2teams'
 jobs:
-  lint:
-    name: Lint
+  run-linters:
+    name: Run linters
     runs-on: ubuntu-latest
+
     steps:
-      - name: Check out the codebase.
-        uses: actions/checkout@v3
-        with:
-          path: 'rezizter.ansible_prom2teams'
+      - name: Check out Git repository
+        uses: actions/checkout@v4
